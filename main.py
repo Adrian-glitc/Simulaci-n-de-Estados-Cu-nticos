@@ -1,6 +1,6 @@
-from repositorio_de_estados import RepositorioDeEstados
-from operador_cuantico import OperadorCuantico
-from estado_cuantico import EstadoCuantico
+from src.estado_cuantico import EstadoCuantico
+from src.operador_cuantico import OperadorCuantico
+from src.repositorio_de_estados import RepositorioDeEstados
 
 def main():
     repo = RepositorioDeEstados()
