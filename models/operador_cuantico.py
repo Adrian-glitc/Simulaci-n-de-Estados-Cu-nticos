@@ -1,14 +1,15 @@
 import numpy as np
+from estado_cuantico import EstadoCuantico
 
 class OperadorCuantico:
     def __init__(self, nombre: str, matriz: np.ndarray):
         self.nombre = nombre
         self.matriz = np.array(matriz, dtype=complex)
         
-    def aplicar(self, estado: 'estado_cuantico') -> 'estado_cuantico':
+    def aplicar(self, estado: 'EstadoCuantico') -> 'EstadoCuantico':
         """Aplica el operador y retorna nuevo estado."""
         nuevo_vector = np.dot(self.matriz, estado.vector)
-        return estado_cuantico(
+        return EstadoCuantico(
             id=f"{estado.id}_{self.nombre}",
             vector=nuevo_vector,
             base=estado.base
