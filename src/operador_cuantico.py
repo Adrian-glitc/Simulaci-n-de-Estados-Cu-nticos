@@ -2,9 +2,10 @@ import numpy as np
 from estado_cuantico import EstadoCuantico
 
 class OperadorCuantico:
-    def __init__(self, nombre: str, matriz: np.ndarray):
+    def __init__(self, nombre: str, matriz):
         self.nombre = nombre
         self.matriz = np.array(matriz, dtype=complex)
+
         
     def aplicar(self, estado: 'EstadoCuantico') -> 'EstadoCuantico':
         """Aplica el operador y retorna nuevo estado."""
@@ -14,5 +15,9 @@ class OperadorCuantico:
             vector=nuevo_vector,
             base=estado.base
         )
-HADAMARD = OperadorCuantico("H", [[1/np.sqrt(2), 1/np.sqrt(2)], ...])
+HADAMARD = OperadorCuantico("H", [
+    [1/np.sqrt(2),  1/np.sqrt(2)],
+    [1/np.sqrt(2), -1/np.sqrt(2)]
+])
+
 PAULI_X = OperadorCuantico("X", [[0, 1], [1, 0]])

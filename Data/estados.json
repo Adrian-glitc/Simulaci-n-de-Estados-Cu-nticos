@@ -1,0 +1,18 @@
+[
+    {
+        "id": "q0",
+        "vector": [
+            "(1+0j)",
+            "0j"
+        ],
+        "base": "computacional"
+    },
+    {
+        "id": "q0_superpuesto",
+        "vector": [
+            "(0.7071067811865476+0j)",
+            "(0.7071067811865476+0j)"
+        ],
+        "base": "computacional"
+    }
+]
