@@ -1,7 +1,7 @@
 # tests/test_repositorio.py
 import unittest
-from models.repositorio_de_estados import RepositorioDeEstados
-from models.estado_cuantico import EstadoCuantico
+from src.repositorio_de_estados import RepositorioDeEstados
+from src.estado_cuantico import EstadoCuantico
 
 class TestRepositorio(unittest.TestCase):
     def test_agregar_estado(self):

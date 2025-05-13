@@ -1,6 +1,6 @@
 # tests/test_estados.py
 import unittest
-from models.estado_cuantico import EstadoCuantico
+from src.estado_cuantico import EstadoCuantico
 
 class TestEstadoCuantico(unittest.TestCase):
     def test_medicion(self):
