@@ -1,26 +1,22 @@
-from models import EstadoCuantico, OperadorCuantico, RepositorioDeEstados
+from repositorio_de_estados import RepositorioDeEstados
+from operador_cuantico import OperadorCuantico
+from estado_cuantico import EstadoCuantico
 
 def main():
     repo = RepositorioDeEstados()
     
-    # Crear y agregar un estado
-    estado1 = EstadoCuantico("q1", [1+0j, 0j], "computacional")
+    # Ejemplo de uso
+    estado1 = EstadoCuantico("q0", [1, 0], "computacional")
     repo.agregar_estado(estado1)
     
-    # Aplicar operador Hadamard
-    hadamard = OperadorCuantico(
-        [[1/np.sqrt(2), 1/np.sqrt(2)],
-         [1/np.sqrt(2), -1/np.sqrt(2)]],
-        "Hadamard"
-    )
-    repo.aplicar_operador("q1", hadamard, "q1_superpuesto")
+    hadamard = OperadorCuantico("H", [[1/np.sqrt(2), 1/np.sqrt(2)], 
+                                     [1/np.sqrt(2), -1/np.sqrt(2)]])
     
-    # Medir un estado
-    print(repo.estados["q1_superpuesto"].medir())  # Output: {0: 0.5, 1: 0.5}
+    repo.aplicar_operador("q0", hadamard, "q0_superpuesto")
+    print(repo.listar_estados())
     
-    # Guardar y cargar
     repo.guardar_json("data/estados.json")
-    repo.cargar_json("data/estados.json")
 
 if __name__ == "__main__":
+    import numpy as np
     main()
